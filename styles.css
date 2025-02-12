@@ -686,3 +686,108 @@ nav ul li a::after { /*to draw a line under the text */
     }
     
 }
+
+
+/* PRODUCT PAGE STYLES */
+
+#product-sect {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+
+}
+.cleanser-container{
+    margin: 100px 10px;
+}
+
+.cleanser-container, .moisturizer-container, .sunscreen-container, .serum-container {
+    text-align: center;
+   
+}
+
+h1 {
+    font-size: 28px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.product-item {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 250px;
+    text-align: center;
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+}
+
+.product-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #555;
+}
+
+p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: var(--third-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--second-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cleanser-container{
+        margin: 180px auto;
+    }
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    h1 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-container {
+        grid-template-columns: 1fr;
+    }
+    .product-item {
+        width: 100%;
+    }
+}
