@@ -518,60 +518,89 @@ nav ul li a::after { /*to draw a line under the text */
 }
 
 /*testemonial style*/
-#testemonial{
+#testemonial {
     background-color: var(--second-color);
     height: auto;
     display: flex;
-    flex-direction: column; 
-    margin: 40px 0px; 
+    justify-content: center; 
+    margin: 40px 0;
+    overflow: hidden;
+}
 
-    
-}
-.testimonial-wrapper{
+.testimonial-wrapper {
+    overflow: hidden;
     width: 100%;
+    padding: 10px 0;
+    position: relative;
 }
-.test-container{
+
+.test-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap; 
     align-items: center;
-    margin: 40px 10px;
-    
+    gap: 80px; 
+    animation: testemonial 15s linear infinite;
 }
-.person{
- padding: 20px 20px;
- height: auto;
- width: auto;
- background-color: var(--main-color);
- border: 1px solid var(--third-color);
- border-radius: 20px;
- cursor: pointer;
- transition:transform 0.4s ease-in-out,
- box-shadow 0.4s ease-in;
+
+@keyframes testemonial {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
-.person:hover{
+
+.person {
+    padding: 20px;
+    height: auto;
+    width: 450px; 
+    background-color: var(--main-color);
+    border: 1px solid var(--third-color);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in;
+}
+
+.person:hover {
     transform: scale(1.06);
     box-shadow: 9px 9px 20px var(--third-color);
 }
 
-.person .profile-pic{
+.person .profile-pic {
     width: 60px;
     border: 1px solid;
-    padding: 5px 5px;
+    padding: 5px;
     border-radius: 50%;
     background-color: var(--third-color);
 }
-.person h5{
+
+.person h5 {
     font-family: var(--main-font);
     font-size: 20px;
-   
 }
-.person p{
+
+.person p {
     font-family: var(--second-font);
 }
-.person .stars{
-    margin: 0px auto;
-    
+
+.person .stars {
+    display: block;
+    margin: 10px auto;
+    width: 80px; 
 }
+@media (max-width: 800px) {
+    .test-container {
+        width: 100%;
+        justify-content: center; }
+    
+    .person {
+        width: 90vw; 
+        height: auto; 
+    } 
+}
+
 /* FOOTER SECTION */
 #footer {
     background-color: var(--primary-color);
